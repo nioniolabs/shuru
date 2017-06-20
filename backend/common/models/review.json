@@ -1,0 +1,49 @@
+{
+  "name": "Review",
+  "plural": "reviews",
+  "idInjection": true,
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number"
+    },
+    "creationDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "author": {
+      "type": "hasOne",
+      "model": "Shuru",
+      "foreignKey": "userId",
+      "primaryKey": "id"
+    },
+    "recommendation": {
+      "type": "hasOne",
+      "model": "Recommendation",
+      "foreignKey": "recommendationId",
+      "primaryKey": "id"
+    },
+    "sharedOn": {
+      "type": "hasMany",
+      "model": "Group",
+      "foreignKey": "groupId",
+      "primaryKey": "id"
+    },
+    "sharedWith": {
+      "type": "hasMany",
+      "model": "Shuru",
+      "foreignKey": "userId",
+      "primaryKey": "id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

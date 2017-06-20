@@ -1,0 +1,38 @@
+{
+  "name": "Notification",
+  "plural": "notifications",
+  "idInjection": true,
+  "properties": {
+    "type": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "read": {
+      "type": "boolean",
+      "required": true
+    },
+    "parameters": {
+      "type": "object",
+      "required": false
+    },
+    "url": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "Shuru",
+      "foreignKey": "userId",
+      "primaryKey": "id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

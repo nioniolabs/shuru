@@ -1,0 +1,52 @@
+{
+  "name": "Shuru",
+  "plural": "shurus",
+  "base": "User",
+  "idInjection": true,
+  "properties": {
+    "creationDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "groups": {
+      "type": "hasMany",
+      "model": "Group",
+      "foreignKey": "userId",
+      "primaryKey": "id"
+    },
+    "recommendation": {
+      "type": "hasOne",
+      "model": "Recommendation",
+      "foreignKey": "recommendationId",
+      "primaryKey": "id"
+    },
+    "watchList": {
+      "type": "hasMany",
+      "model": "Recommendation",
+      "foreignKey": "userId",
+      "primaryKey": "id"
+    },
+    "reviews": {
+      "type": "hasMany",
+      "model": "Review",
+      "foreignKey": "userId",
+      "primaryKey": "id"
+    },
+    "notifications": {
+      "type": "hasMany",
+      "model": "Notification",
+      "foreignKey": "userId",
+      "primaryKey": "id"
+    },
+    "installations": {
+      "type": "hasMany",
+      "model": "Instalation",
+      "foreignKey": "userId",
+      "primaryKey": "id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

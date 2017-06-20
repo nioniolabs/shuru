@@ -1,0 +1,15 @@
+{
+  "name": "Installation",
+  "plural": "installations",
+  "idInjection": true,
+  "properties": {
+    "params": {
+      "type": "object",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}  
+}

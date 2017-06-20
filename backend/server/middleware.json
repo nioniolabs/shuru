@@ -15,7 +15,7 @@
     "helmet#frameguard": {
       "params": [
         "deny"
-       ]
+      ]
     },
     "helmet#hsts": {
       "params": {
@@ -34,6 +34,13 @@
   "auth": {},
   "parse": {},
   "routes": {
+    "loopback-component-winston#requestLogger": {
+      "params": {
+        "level": "debug",
+        "msg": "${res.statusCode} ${req.method} ${res.time}ms ${req.decodedUrl}",
+        "meta": false
+      }
+    },
     "loopback#rest": {
       "paths": [
         "${restApiRoot}"
@@ -45,6 +52,11 @@
     "loopback#urlNotFound": {}
   },
   "final:after": {
-    "strong-error-handler": {}
+    "strong-error-handler": {
+      "params": {
+        "debug": true,
+        "log": true
+      }
+    }
   }
 }

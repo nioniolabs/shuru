@@ -4,7 +4,8 @@
       "loopback/common/models",
       "loopback/server/models",
       "../common/models",
-      "./models"
+      "./models",
+      "./services"
     ],
     "mixins": [
       "loopback/common/mixins",
@@ -14,7 +15,8 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "mongodb",
+    "public": false
   },
   "AccessToken": {
     "dataSource": "db",
@@ -35,7 +37,28 @@
     "dataSource": "db",
     "public": false
   },
-  "Note": {
-    "dataSource": "db"
+  "Shuru": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Group": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Review": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Recommendation": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Notification": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Installation": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }

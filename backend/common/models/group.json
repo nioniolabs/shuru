@@ -1,0 +1,43 @@
+{
+  "name": "Group",
+  "plural": "groups",
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "isPublic": {
+      "type": "boolean"
+    },
+    "creationDate": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "creator": {
+      "type": "hasOne",
+      "model": "Shuru",
+      "foreignKey": "userId",
+      "primaryKey": "id"
+    },
+    "users": {
+      "type": "hasMany",
+      "model": "Shuru",
+      "foreignKey": "userId",
+      "primaryKey": "id"
+    },
+    "reviews": {
+      "type": "hasMany",
+      "model": "Review",
+      "foreignKey": "reviewId",
+      "primaryKey": "id"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
